@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: medcounter 
+  namespace: med
+spec:
+  containers:
+  - name: medcounter
+    image: busybox
+    args: [/bin/sh, -c,
+            'i=0; while true; do echo "$i: Hello Mohammed here is the date $(date)"; i=$((i+1)); sleep 1; done']
